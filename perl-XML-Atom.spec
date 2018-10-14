@@ -4,13 +4,14 @@
 #
 Name     : perl-XML-Atom
 Version  : 0.42
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.42.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.42.tar.gz
 Summary  : 'Atom feed and API implementation'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
-Requires: perl-XML-Atom-man
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-XML-Atom-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 BuildRequires : perl(ExtUtils::Config)
 BuildRequires : perl(ExtUtils::Helpers)
 BuildRequires : perl(ExtUtils::InstallPaths)
@@ -23,12 +24,21 @@ SYNOPSIS
 use XML::Atom;
 DESCRIPTION
 
-%package man
-Summary: man components for the perl-XML-Atom package.
+%package dev
+Summary: dev components for the perl-XML-Atom package.
+Group: Development
+Provides: perl-XML-Atom-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-XML-Atom package.
+
+
+%package license
+Summary: license components for the perl-XML-Atom package.
 Group: Default
 
-%description man
-man components for the perl-XML-Atom package.
+%description license
+license components for the perl-XML-Atom package.
 
 
 %prep
@@ -49,10 +59,12 @@ fi
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-XML-Atom
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-XML-Atom/LICENSE
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -61,21 +73,21 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Base.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Category.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Client.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Content.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Entry.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/ErrorHandler.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Feed.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Link.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Person.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Server.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Thing.pm
-/usr/lib/perl5/site_perl/5.26.1/XML/Atom/Util.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Base.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Category.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Client.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Content.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Entry.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/ErrorHandler.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Feed.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Link.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Person.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Server.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Thing.pm
+/usr/lib/perl5/vendor_perl/5.26.1/XML/Atom/Util.pm
 
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/XML::Atom.3
 /usr/share/man/man3/XML::Atom::Base.3
@@ -90,3 +102,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/XML::Atom::Server.3
 /usr/share/man/man3/XML::Atom::Thing.3
 /usr/share/man/man3/XML::Atom::Util.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-XML-Atom/LICENSE
