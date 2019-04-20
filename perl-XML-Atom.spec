@@ -4,10 +4,10 @@
 #
 Name     : perl-XML-Atom
 Version  : 0.42
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.42.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.42.tar.gz
-Summary  : 'Atom feed and API implementation'
+Summary  : Atom feed and API implementation
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-XML-Atom-license = %{version}-%{release}
@@ -28,6 +28,7 @@ DESCRIPTION
 Summary: dev components for the perl-XML-Atom package.
 Group: Development
 Provides: perl-XML-Atom-devel = %{version}-%{release}
+Requires: perl-XML-Atom = %{version}-%{release}
 
 %description dev
 dev components for the perl-XML-Atom package.
