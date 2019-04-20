@@ -73,19 +73,19 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Base.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Category.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Client.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Content.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Entry.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/ErrorHandler.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Feed.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Link.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Person.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Server.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Thing.pm
-/usr/lib/perl5/vendor_perl/5.28.1/XML/Atom/Util.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Base.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Category.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Client.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Content.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Entry.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/ErrorHandler.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Feed.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Link.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Person.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Server.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Thing.pm
+/usr/lib/perl5/vendor_perl/5.28.2/XML/Atom/Util.pm
 
 %files dev
 %defattr(-,root,root,-)
