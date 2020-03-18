@@ -4,7 +4,7 @@
 #
 Name     : perl-XML-Atom
 Version  : 0.42
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.42.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.42.tar.gz
 Summary  : 'Atom feed and API implementation'
@@ -108,16 +108,16 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Base.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Category.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Client.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Content.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Entry.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/ErrorHandler.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Feed.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Link.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Person.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Server.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Thing.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/Atom/Util.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Base.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Category.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Client.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Content.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Entry.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/ErrorHandler.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Feed.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Link.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Person.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Server.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Thing.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/Atom/Util.pm
