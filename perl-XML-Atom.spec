@@ -4,12 +4,13 @@
 #
 Name     : perl-XML-Atom
 Version  : 0.43
-Release  : 22
+Release  : 23
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.43.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.43.tar.gz
 Summary  : 'Atom feed and API implementation'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-XML-Atom-license = %{version}-%{release}
 Requires: perl-XML-Atom-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(ExtUtils::Config)
@@ -32,6 +33,14 @@ Requires: perl-XML-Atom = %{version}-%{release}
 
 %description dev
 dev components for the perl-XML-Atom package.
+
+
+%package license
+Summary: license components for the perl-XML-Atom package.
+Group: Default
+
+%description license
+license components for the perl-XML-Atom package.
 
 
 %package perl
@@ -62,6 +71,8 @@ fi
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-XML-Atom
+cp %{_builddir}/XML-Atom-0.43/LICENSE %{buildroot}/usr/share/package-licenses/perl-XML-Atom/2434119d9a2c5e02869672c3767acc217fc2d4ba
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -91,18 +102,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/XML::Atom::Thing.3
 /usr/share/man/man3/XML::Atom::Util.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-XML-Atom/2434119d9a2c5e02869672c3767acc217fc2d4ba
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Base.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Category.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Client.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Content.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Entry.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/ErrorHandler.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Feed.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Link.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Person.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Server.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Thing.pm
-/usr/lib/perl5/vendor_perl/5.34.0/XML/Atom/Util.pm
+/usr/lib/perl5/*
