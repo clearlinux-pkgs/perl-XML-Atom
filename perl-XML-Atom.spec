@@ -5,7 +5,7 @@
 #
 Name     : perl-XML-Atom
 Version  : 0.43
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.43.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/XML-Atom-0.43.tar.gz
 Summary  : 'Atom feed and API implementation'
